@@ -7,9 +7,20 @@ import MicIcon from '@mui/icons-material/Mic';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
+
+    const navigate = useNavigate();
+
+    
+
+    const handleInput= (e) => {
+        if(e.key === "Enter") {
+            console.log("Enter pressed");
+            navigate(`/search/${inputSearch}`);
+        }
+    };
 
   const[inputSearch,setInputSearch] = useState("");
   return (
@@ -33,9 +44,9 @@ function Header() {
         </div>
 
         <div className="header__middle">
-            
+
              {/* search in youtube */}
-            <input value={inputSearch} onChange={e => setInputSearch(e.target.value)} type="text" placeholder='Search' />
+            <input value={inputSearch} onChange={e => setInputSearch(e.target.value)} type="text" placeholder='Search' onKeyDown={handleInput} />
 
             <Link to={`/search/${inputSearch}`}>
             <SearchIcon className='header__searchButton'/>
