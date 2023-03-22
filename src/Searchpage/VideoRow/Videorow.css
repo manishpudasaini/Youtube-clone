@@ -1,0 +1,17 @@
+.videorow{
+    display: flex;
+    padding: 20px;
+}
+
+.videorow__logo{
+    margin-right: 20px;
+}
+
+.videorow__text{
+    width: 70%;
+}
+.videorow__text > p{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
