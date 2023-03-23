@@ -13,8 +13,6 @@ function Header() {
 
     const navigate = useNavigate();
 
-    
-
     const handleInput= (e) => {
         if(e.key === "Enter") {
             console.log("Enter pressed");
@@ -46,7 +44,12 @@ function Header() {
         <div className="header__middle">
 
              {/* search in youtube */}
-            <input value={inputSearch} onChange={e => setInputSearch(e.target.value)} type="text" placeholder='Search' onKeyDown={handleInput} />
+            <input 
+                value={inputSearch} 
+                onChange={e => setInputSearch(e.target.value)} 
+                type="text" placeholder='Search' 
+                onKeyDown={handleInput} 
+            />
 
             <Link to={`/search/${inputSearch}`}>
             <SearchIcon className='header__searchButton'/>

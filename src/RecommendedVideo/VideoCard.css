@@ -11,6 +11,11 @@
     width: 250px;
 }
 
+.videocard__img:hover{
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+
 .videoCard__info{
     display: flex;
     margin-top: 10px;
